@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Roger</title>
+    <meta charset="utf-8">
+</head>
+<body style="font-family:Arial;text-align:center;padding-top:50px;">
+    <h1>Roger</h1>
+
+    <button onclick="choisir()">Je ressens un manque</button>
+
+    <h2 id="resultat"></h2>
+
+    <script>
+        const famille = [
+            {
+                nom: "Gui Pro",
+                whatsapp: "33601718375"
+            },
+            {
+                nom: "Gui Perso",
+                whatsapp: "33672500863"
+            }
+        ];
+
+        function choisir() {
+            const personne =
+                famille[Math.floor(Math.random() * famille.length)];
+
+            document.getElementById("resultat").innerHTML =
+                `${personne.nom}<br><br>
+                <a href="https://wa.me/${personne.whatsapp}">
+                📞 Contacter sur WhatsApp
+                </a>`;
+        }
+    </script>
+</body>
+</html>
